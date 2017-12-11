@@ -57,6 +57,7 @@ class MaimaiPipeline(object):
             level = item['level']
             comment = item['comment']
             try:
+                # 评论中可能会有emoji 表情 所以。。。
                 Sql.insert_commentitem(
                     id, friend_id, friend_name,
                     friend_company, friend_position, level, comment

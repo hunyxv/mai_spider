@@ -20,9 +20,8 @@ MYSQL_DB = MYSQL_CONFIG['MYSQL_DB']
 
 # 往redis数据库中存放一个开始的encode_mmid
 Sql.push_new_encode_mmid('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.'
-                         'eyJ1IjozMTUzNywibGV2ZWwiOjAsInQiOiJjd'
-                         'HQifQ.SCEVL0s7GT_pOvSRCVROcaNRurS-fUb'
-                         'NTGnEquQRM2I', 31537)
+                         'eyJ1IjoyMDIzMDksImxldmVsIjowLCJ0IjoiY3R0In0.'
+                         'yYFtxlB61nFSfadN3GNYreTTfgmYHv3nNVkRBqC1ubE', 202309)
 # COOKIE
 COOKIES = other_cookies
 
@@ -75,7 +74,7 @@ class MaimaiSpider(scrapy.Spider):
 
                 person_url = self.person_url.format(new_mmid[0])
 
-                comment_url = self.comment_url.format(new_mmid[0])
+                comment_url = self.comment_url.format(new_mmid[1])
                 yield scrapy.Request(comment_url, callback=self.get_comment,
                                      headers={'Referer': referer})
 
@@ -234,7 +233,7 @@ class MaimaiSpider(scrapy.Spider):
 
                 person_url = self.person_url.format(new_mmid[0])
 
-                comment_url = self.comment_url.format(new_mmid[0])
+                comment_url = self.comment_url.format(new_mmid[1])
                 yield scrapy.Request(comment_url, callback=self.get_comment,
                                      headers={'Referer': referer})
 
