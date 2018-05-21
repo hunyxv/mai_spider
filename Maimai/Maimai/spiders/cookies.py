@@ -8,8 +8,8 @@ COOKIE_PATH = os.path.join(os.path.abspath(os.path.dirname(__name__)), 'spiders/
 
 ACCOUNT = [
     {
-        'm': '15127860671',
-        'p': 'wang5695196',
+        'm': '151******',
+        'p': 'password',
         'to': None,
         'pa': '+86'
     },
